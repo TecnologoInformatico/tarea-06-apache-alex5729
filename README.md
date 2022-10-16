@@ -27,3 +27,36 @@ repositorio: `https://github.com/TecnologoInformatico/AdmInf-web.git`
     "ip": ""
 }
 ```
+===========TAREA=========
+sudo apt update
+sudo apt install apache2
+systemctl status apache2(chequea estado)
+cd /etc/apache2/
+ls
+cd sites-available/
+cd -(vuelve al directorio anterior)
+ls sites-enables/
+cd -
+sudo cp 000-default.conf ./amartinez.conf
+sudo nano amartinez.conf
+
+borramos el comentario de ServerName y ponemos ServerName www.test.com
+DocumentRoot /var/www/teast(guardar)
+sudo mkdir /var/www/test
+cd /var/www/test/
+sudo nano index.html
+
+poner cualquier texto
+guardo
+sudo a2ensite amartinez.conf
+sudo systemctl relaod apache2
+sudo nano /etc/hosts
+copiamos primer linea 127.0.0.1 
+y la ponemos abajo de todo el archivo
+127.0.0.1	www.test.com
+guardamos
+curl http://www.test.com
+
+---------------------------------------------------------------------------------------------
+en la seccion de c, system32 en hosts pones la ip del servidor que quieras conectarse
+
